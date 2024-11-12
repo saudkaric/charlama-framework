@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Charlama\\": "src/",
+            "Charlama\\": "src/"
         },
         "files": ["src/Helpers/helper.php"]
     },
