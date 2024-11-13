@@ -27,7 +27,10 @@ class Database
     protected static $where_binding   = [];
     protected static $having_binding  = [];
 
-    private function __construct() {}
+    public function __construct($table)
+    {
+        static::$table = $table;
+    }
     
     private static function connect()
     {
@@ -55,9 +58,9 @@ class Database
     private static function instance()
     {
         static::connect();
-        
+        $table = static::$table;
         if (!static::$instance) {
-            self::$instance = new Database();
+            self::$instance = new Database($table);
         }
         
         return self::$instance;
@@ -139,7 +142,7 @@ class Database
         }
         
         static::$where .= $stmt;
-        static::$where_binding[] = htmlspecialchars($value);
+        static::$where_binding[] = htmlspecialchars(trim((string) $value) ?? '');
         
         return static::instance();
     }
@@ -168,7 +171,7 @@ class Database
         }
         
         static::$having .= $stmt;
-        static::$having_binding[] = htmlspecialchars($value ?? '');
+        static::$having_binding[] = htmlspecialchars(trim((string) $value) ?? '');
         
         return static::instance();
     }

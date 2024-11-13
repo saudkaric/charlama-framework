@@ -1,7 +1,7 @@
 <?php
 
 if (!function_exists('view')) {
-    function view($path, $data, $type = 'blade') {
+    function view($path, $data = [], $type = 'blade') {
         return Charlama\View\View::render($path, $data, $type);
     }
 }

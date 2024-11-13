@@ -11,7 +11,7 @@ class View
 {
     private function __construct() {}
     
-    public static function render($path, $data, $type = null)
+    public static function render($path, $data = [], $type = null)
     {
         $render = $type ? $type : 'blade';
         $render .= 'Render';
@@ -24,13 +24,13 @@ class View
         return static::$render($path, $data);
     }
     
-    public static function bladeRender($path, $data)
+    public static function bladeRender($path, $data = [])
     {
         $blade = new Blade(File::path('views'), File::path('storage/cache'));
         return $blade->make($path, $data)->render();
     }
 
-    public static function viewRender($path, $data)
+    public static function viewRender($path, $data = [])
     {
         $dir_sep = ['/', '\\', '.', '|', '@', '#'];
         $path = 'views' . File::ds() . str_replace($dir_sep, File::ds(), $path) . '.php';
