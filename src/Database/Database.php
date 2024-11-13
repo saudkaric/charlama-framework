@@ -168,7 +168,7 @@ class Database
         }
         
         static::$having .= $stmt;
-        static::$having_binding[] = htmlspecialchars($value);
+        static::$having_binding[] = htmlspecialchars($value ?? '');
         
         return static::instance();
     }
