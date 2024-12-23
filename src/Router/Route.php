@@ -115,7 +115,7 @@ class Route
             }
         }
         
-        return redirect('not-found');
+        return redirect(url('not-found'));
     }
     
     private static function invoke($route, $params = [])
