@@ -115,7 +115,7 @@ class Route
             }
         }
         
-        return \Charlama\View\View::render('errors.404', []);
+        return redirect('not-found');
     }
     
     private static function invoke($route, $params = [])
