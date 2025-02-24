@@ -1,0 +1,24 @@
+{
+    "name": "charlama/framework",
+    "description": "Charalama is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Saud Karic",
+            "email": "karicsaud@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.1",
+        "spatie/ignition": "^1.15",
+        "jenssegers/blade": "dev-master",
+        "rakit/validation": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Charlama\\": "src/"
+        }
+    }
+}

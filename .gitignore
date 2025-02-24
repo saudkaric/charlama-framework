@@ -1,0 +1,5 @@
+/node_module
+/vendor
+/.vscode
+/.idea
+/nbproject
